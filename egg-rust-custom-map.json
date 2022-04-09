@@ -138,7 +138,7 @@
       "name": "App Port",
       "description": "Port for the Rust+ App. -1 to disable.",
       "env_variable": "APP_PORT",
-      "default_value": "28082",
+      "default_value": "-1",
       "user_viewable": true,
       "user_editable": true,
       "rules": "required|integer"
