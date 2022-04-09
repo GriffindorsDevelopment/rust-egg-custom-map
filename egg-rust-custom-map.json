@@ -8,7 +8,7 @@
   "author": "griffin@trillionservers.com",
   "description": "The only aim in Rust is to survive. To do this you will need to overcome struggles such as hunger, thirst and cold. Build a fire. Build a shelter. Kill animals for meat. Protect yourself from other players, and kill them for meat. Create alliances with other players and form a town. Do whatever it takes to survive.",
   "image": "griffindor30\/rust-custom-map-egg:latest",
-  "startup": ".\/RustDedicated -batchmode +server.port {{SERVER_PORT}} +server.identity \"rust\" +rcon.port {{RCON_PORT}} +rcon.web true +server.hostname \\\"{{HOSTNAME}}\\\" +server.description \\\"{{DESCRIPTION}}\\\" +server.url \\\"{{SERVER_URL}}\\\" +server.headerimage \\\"{{SERVER_IMG}}\\\" +server.logoimage \\\"{{SERVER_LOGO}}\\\" +server.maxplayers {{MAX_PLAYERS}} +rcon.password \\\"{{RCON_PASS}}\\\" +server.saveinterval {{SAVEINTERVAL}} +app.port {{APP_PORT}} +levelurl {{CUSTOM_MAP}}  {{ADDITIONAL_ARGS}}",
+  "startup": ".\/RustDedicated -batchmode +server.port {{SERVER_PORT}} +server.identity \\\"{{SERVER_IDENTITY}}\\\" +server.tags \\\"{{SERVER_TAGS}}\\\" +rcon.port {{RCON_PORT}} +rcon.web true +server.hostname \\\"{{HOSTNAME}}\\\" +server.description \\\"{{DESCRIPTION}}\\\" +server.url \\\"{{SERVER_URL}}\\\" +server.headerimage \\\"{{SERVER_IMG}}\\\" +server.logoimage \\\"{{SERVER_LOGO}}\\\" +server.maxplayers {{MAX_PLAYERS}} +rcon.password \\\"{{RCON_PASS}}\\\" +server.saveinterval {{SAVEINTERVAL}} +app.port {{APP_PORT}} +levelurl {{CUSTOM_MAP}}  {{ADDITIONAL_ARGS}}",
   "features": [
     "steam_disk_space"
   ],
@@ -43,6 +43,24 @@
       "user_viewable": true,
       "user_editable": true,
       "rules": "required|boolean"
+    },
+    {
+      "name": "Server Identity",
+      "description": "This sets which folder in the server folder that it pulls from for map saves etc.",
+      "env_variable": "SERVER_IDENTITY",
+      "default_value": "rust",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|boolean"
+    },
+    {
+      "name": "Server Tags",
+      "description": "This sets server tags. The available server tags are monthly,biweekly,weekly,vanilla,pve,roleplay,creative,softcore,minigame,training,battlefield,broyale,builds. Each tag is separated by a comma below.",
+      "env_variable": "SERVER_TAGS",
+      "default_value": "",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "nullable|string"
     },
     {
       "name": "Description",
