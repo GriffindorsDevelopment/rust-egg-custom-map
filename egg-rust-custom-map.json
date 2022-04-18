@@ -8,7 +8,7 @@
   "author": "griffin@trillionservers.com",
   "description": "The only aim in Rust is to survive. To do this you will need to overcome struggles such as hunger, thirst and cold. Build a fire. Build a shelter. Kill animals for meat. Protect yourself from other players, and kill them for meat. Create alliances with other players and form a town. Do whatever it takes to survive.",
   "image": "griffindor30\/rust-custom-map-egg:latest",
-  "startup": ".\/RustDedicated -batchmode +server.port {{SERVER_PORT}} +server.identity \\\"{{SERVER_IDENTITY}}\\\" +server.tags \\\"{{SERVER_TAGS}}\\\" +rcon.port {{RCON_PORT}} +rcon.web true +server.hostname \\\"{{HOSTNAME}}\\\" +server.description \\\"{{DESCRIPTION}}\\\" +server.url \\\"{{SERVER_URL}}\\\" +server.headerimage \\\"{{SERVER_IMG}}\\\" +server.logoimage \\\"{{SERVER_LOGO}}\\\" +server.maxplayers {{MAX_PLAYERS}} +rcon.password \\\"{{RCON_PASS}}\\\" +server.saveinterval {{SAVEINTERVAL}} +app.port {{APP_PORT}} +levelurl {{CUSTOM_MAP}}  {{ADDITIONAL_ARGS}}",
+  "startup": ".\/RustDedicated -batchmode +server.port {{SERVER_PORT}} +server.identity \\\"{{SERVER_IDENTITY}}\\\" +server.tags \\\"{{SERVER_TAGS}}\\\" +rcon.port {{RCON_PORT}} +rcon.web true +server.hostname \\\"{{HOSTNAME}}\\\" +server.description \\\"{{DESCRIPTION}}\\\" +server.url \\\"{{SERVER_URL}}\\\" +server.headerimage \\\"{{SERVER_IMG}}\\\" +server.logoimage \\\"{{SERVER_LOGO}}\\\" +server.maxplayers {{MAX_PLAYERS}} +rcon.password \\\"{{RCON_PASS}}\\\" +server.saveinterval {{SAVEINTERVAL}} +app.port {{APP_PORT}} +levelurl {{CUSTOM_MAP_URL}} {{ADDITIONAL_ARGS}}",
   "features": [
     "steam_disk_space"
   ],
@@ -51,7 +51,7 @@
       "default_value": "rust",
       "user_viewable": true,
       "user_editable": true,
-      "rules": "required|boolean"
+      "rules": "nullable|string"
     },
     {
       "name": "Server Tags",
@@ -151,6 +151,15 @@
       "user_viewable": true,
       "user_editable": true,
       "rules": "nullable|url"
+    },
+    {
+      "name": "Additional Arguments",
+      "description": "Add additional startup parameters to the server.",
+      "env_variable": "ADDITIONAL_ARGS",
+      "default_value": "",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "nullable|string"
     }
   ]
 }
